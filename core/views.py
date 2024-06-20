@@ -7,12 +7,13 @@ from .forms import *
 # Create your views here.
 
 def home(request):
-    return render(request, "core/index.html")
+     tweets = Tweet.objects.all().order_by('-created_at')
+     return render(request, "core/index.html",{"tweets":tweets})
 
 
-def tweet_list(request):
-    tweets = Tweet.objects.all().order_by('-created_at')
-    return render(request, "core/tweet_list.html", {"tweets": tweets})
+# def tweet_list(request):
+#     tweets = Tweet.objects.all().order_by('-created_at')
+#     return render(request, "core/tweet_list.html", {"tweets": tweets})
 
 
 def tweet_create(request):
