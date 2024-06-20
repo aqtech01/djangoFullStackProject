@@ -9,7 +9,7 @@
     {% for tweet in tweets %}
     <div class="col-md-4">
       <div class="card">
-        <img src="{{ tweet.photo.url }}" alt="img" class="card-img-top">
+        <img src="{{ tweet.photo.url }}" alt="img" height="200px" class="card-img-top">
         <div class="card-body">
           <h4 class="card-title">{{ tweet.user.username }}</h4>
           <p class="card-text">{{ tweet.tweet }}</p>
