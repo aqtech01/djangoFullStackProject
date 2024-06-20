@@ -1,18 +1,21 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+
+{% block content %}
 <h1>Welcome to AQ Tweet App</h1>
-<a href="" class="btn btn-outline-light mb-2"> Create Tweet </a>
+<a href="" class="btn btn-outline-light mb-2">Create Tweet</a>
 
-<div class="container row gap-3">
-
-  {% for tweet in tweets %}
-  <img src="{{tweet.photo.url}}" alt="img" srcset="" />
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">{{tweet.user.username}}</h4>
-
-      <p class="card-text">{{ tweet.tweet }}</p>
-      <a href="#" class="card-link btn btn-success">Card link</a>
-
+<div class="container">
+  <div class="row gap-3">
+    {% for tweet in tweets %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{ tweet.photo.url }}" alt="img" class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">{{ tweet.user.username }}</h4>
+          <p class="card-text">{{ tweet.tweet }}</p>
+          <a href="#" class="card-link btn btn-success">Card link</a>
+        </div>
+      </div>
     </div>
     {% endfor %}
   </div>
